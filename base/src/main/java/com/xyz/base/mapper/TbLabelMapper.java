@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xyz.base.entity.Label;
 import com.xyz.base.entity.TbLabel;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -16,6 +18,8 @@ import java.util.List;
  * @author valarcfcc
  * @since 2020-04-20
  */
+@Mapper
+@Repository
 public interface TbLabelMapper extends BaseMapper<TbLabel> {
     IPage<TbLabel> findSearch(Page<?> page, TbLabel label);
     List<TbLabel> page(TbLabel label);
