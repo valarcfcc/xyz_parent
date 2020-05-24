@@ -12,6 +12,7 @@
         <module>common</module>
         <module>base</module>
         <module>recruit</module>
+        <module>search</module>
     </modules>
 
     <name>xyz_parent</name>
@@ -44,6 +45,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

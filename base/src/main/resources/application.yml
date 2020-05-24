@@ -11,6 +11,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: 192.168.0.129
+  data:
+    mongodb:
+      host: 192.168.0.129
+      database: spitdb
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   type-aliases-package: com.xyz.base.entity
