@@ -19,4 +19,8 @@ import java.util.List;
 public interface ITbLabelService extends IService<TbLabel> {
     public IPage<TbLabel> findSearch(Page<TbLabel> page,TbLabel label);
     public List<TbLabel> page(TbLabel label);
+
+    void update(TbLabel label);
+
+    void deleteById(String id);
 }

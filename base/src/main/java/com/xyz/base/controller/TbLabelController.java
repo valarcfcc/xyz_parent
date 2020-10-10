@@ -23,6 +23,7 @@ import util.IdWorker;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>
@@ -80,7 +81,8 @@ public class TbLabelController {
         Map<String,Object> data = new HashMap<>();
         if(label==null){
             label=tbLabelService.getById(id);
-            redisTemplate.opsForValue().set("base"+id,label);
+            redisTemplate.opsForValue().set("base"+id,label,1,
+                    TimeUnit.DAYS);
             data.put("数据源","mysql");
             data.put("data",label);
             return Result.ok(JSON.toJSONString(data));
@@ -89,9 +91,9 @@ public class TbLabelController {
             data.put("data",label);
             return Result.ok(JSON.toJSONString(data));
         }
-
-
     }
+
+
     @PostMapping
     public Result save(@RequestBody Label label) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
